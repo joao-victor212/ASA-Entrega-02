@@ -15,7 +15,7 @@ services:
       - "8081:80/tcp"
   web2:
     build:
-      context: /web2
+      context: ./web2
       dockerfile: Dockerfile
     container_name: web2
     ports: 
