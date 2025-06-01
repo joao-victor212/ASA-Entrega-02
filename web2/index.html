@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASA Networks - Soluções em Infraestrutura Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-blue-600 text-white p-2 rounded-lg">
+                    <i class="fas fa-server text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-blue-600">ASA Networks</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-blue-600 font-medium hover:text-blue-800">Início</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600">Serviços</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600">Sobre</a>
+            </nav>
+            
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Infraestrutura Digital de Alto Desempenho</h2>
+                <p class="text-xl mb-8 text-blue-100">Soluções em hospedagem, DNS e proxy reverso com tecnologia Docker para sua empresa escalar com segurança e confiabilidade.</p>
+                <div class="flex space-x-4">
+                    <a href="#services" class="border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition">Nossos Serviços</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute -top-10 -left-10 w-32 h-32 bg-blue-400 rounded-full opacity-20"></div>
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-blue-400 rounded-full opacity-20"></div>
+                    <div class="relative bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 border border-white border-opacity-20">
+                        <div class="flex items-center mb-4">
+                            <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+                            <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                            <div class="flex-1"></div>
+                            <div class="text-sm">terminal</div>
+                        </div>
+                        <div class="font-mono text-sm">
+                            <p class="text-green-400">$ docker-compose up -d</p>
+                            <p class="text-gray-300 mt-2">Creating network "asa_default"</p>
+                            <p class="text-gray-300">Creating asa_web_1 ... done</p>
+                            <p class="text-gray-300">Creating asa_proxy_1 ... done</p>
+                            <p class="text-gray-300">Creating asa_dns_1 ... done</p>
+                            <p class="text-green-400 mt-2">$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Nossas Soluções</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Tecnologia de ponta para garantir a melhor experiência em infraestrutura digital</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-server text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Hospedagem Docker</h3>
+                    <p class="text-gray-600 mb-4">Ambientes isolados e escaláveis com tecnologia de contêineres para suas aplicações.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Deploy automatizado</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Escalabilidade horizontal</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Isolamento de recursos</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-globe text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Gerenciamento DNS</h3>
+                    <p class="text-gray-600 mb-4">Solução completa de DNS com alta disponibilidade e baixa latência.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Zonas DNS personalizadas</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Balanceamento de carga</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Failover automático</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-exchange-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Proxy Reverso</h3>
+                    <p class="text-gray-600 mb-4">Otimização de tráfego e segurança para suas aplicações web.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> SSL/TLS Termination</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Cache de conteúdo</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Proteção DDoS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Sobre a ASA Networks</h2>
+                    <p class="text-gray-600 mb-6">Somos especialistas em infraestrutura digital, oferecendo soluções robustas e escaláveis para empresas que demandam alta disponibilidade e desempenho.</p>
+                    <p class="text-gray-600 mb-6">Nossa stack tecnológica baseada em Docker, combinada com soluções avançadas de DNS e proxy reverso, garante que suas aplicações estejam sempre disponíveis, seguras e com o melhor desempenho possível.</p>
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4">
+                        <p class="text-blue-800 italic">"Na ASA Networks, transformamos complexidade técnica em simplicidade operacional para nossos clientes."</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 rounded-xl p-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                <div class="text-blue-600 mb-2">
+                                    <i class="fas fa-calendar-alt text-3xl"></i>
+                                </div>
+                                <h4 class="font-bold mb-1">+5 Anos</h4>
+                                <p class="text-sm text-gray-600">de experiência</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                <div class="text-blue-600 mb-2">
+                                    <i class="fas fa-project-diagram text-3xl"></i>
+                                </div>
+                                <h4 class="font-bold mb-1">+200</h4>
+                                <p class="text-sm text-gray-600">projetos entregues</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                <div class="text-blue-600 mb-2">
+                                    <i class="fas fa-shield-alt text-3xl"></i>
+                                </div>
+                                <h4 class="font-bold mb-1">99.99%</h4>
+                                <p class="text-sm text-gray-600">uptime garantido</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                <div class="text-blue-600 mb-2">
+                                    <i class="fas fa-users text-3xl"></i>
+                                </div>
+                                <h4 class="font-bold mb-1">+50</h4>
+                                <p class="text-sm text-gray-600">clientes satisfeitos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">ASA Networks</h3>
+                    <p class="text-gray-400">Soluções em infraestrutura digital com tecnologia de ponta para sua empresa.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Serviços</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Hospedagem Docker</a></li>
+                        <li><a href="#" class="hover:text-white">Gerenciamento DNS</a></li>
+                        <li><a href="#" class="hover:text-white">Proxy Reverso</a></li>
+                        <li><a href="#" class="hover:text-white">Consultoria</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Links Úteis</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Documentação</a></li>
+                        <li><a href="#" class="hover:text-white">Status</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 ASA Networks. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle
+        document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+            const nav = document.querySelector('nav.md\\:flex');
+            if (nav.classList.contains('hidden')) {
+                nav.classList.remove('hidden');
+                nav.classList.add('flex', 'flex-col', 'absolute', 'top-16', 'right-4', 'bg-white', 'p-4', 'rounded-lg', 'shadow-lg');
+            } else {
+                nav.classList.add('hidden');
+                nav.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'right-4', 'bg-white', 'p-4', 'rounded-lg', 'shadow-lg');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
