@@ -6,6 +6,19 @@ services:
     container_name: dns
     ports:
     - "53:53/udp"
+    networks:
+      - asa-network
+  proxy:
+    build: 
+      context: ./proxy
+      dockerfile: Dockerfile
+    container_name: proxy
+    ports:
+      - "80:80/tcp"
+    depends_on:
+      - web1
+    networks:
+      - asa-network
   web1:
     build:
       context: ./web1
@@ -13,10 +26,19 @@ services:
     container_name: web1
     ports:
       - "8081:80/tcp"
+    networks:
+      - asa-network
+
   web2:
     build:
       context: ./web2
       dockerfile: Dockerfile
     container_name: web2
     ports: 
-      - "8082:80"
+      - "8082:80"    
+    networks:
+      - asa-network
+#Docker Networks
+networks:
+  asa-network:
+    driver: bridge
