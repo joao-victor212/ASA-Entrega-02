@@ -40,47 +40,8 @@ ASA-Entrega-02/
 │   └── default.conf
 ├── README.md
 ├── docker-compose.yml
-├── service.bat
-└── service.sh
+
 ```
-
----
-
-##    Passo a passo
-
-### 🐳 Subir Todos os Containers com um Único Comando
-
-#### 1️⃣ Parar e remover containers existentes
-
-```bash
-docker stop web bind9 adminer 2>/dev/null
-docker rm web bind9 adminer 2>/dev/null
-```
-
-#### 2️⃣ Criar rede Docker (se não existir)
-```bash
-docker network create asa_rede 2>/dev/null || true
-```
-
-#### 3️⃣ Construir e subir containers
-```bash
-cd DNS && docker build -t meu_bind9 . && docker run -d --name bind9 --network asa_rede -p 53:53/udp meu_bind9 && cd ..
-cd WEB && docker build -t meu_web . && docker run -d --name web --network asa_rede -p 8080:80 meu_web && cd ..
-docker run -d --name adminer --network asa_rede -p 8081:8080 adminer:latest
-```
-
-#### 4️⃣ Verificar status
-```bash
-echo ""
-echo "✅ CONTAINERS INICIADOS COM SUCESSO!"
-echo "===================================="
-echo "WEB:      http://localhost:8080"
-echo "Adminer:  http://localhost:8081"
-echo "           (Servidor: db, Usuário: admin, Senha: senha)"
-echo ""
-docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
-```
-
 ---
 
 ## 🔧 Tecnologias Utilizadas
@@ -95,30 +56,32 @@ docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
 
 ## 🏗️ Componentes da Solução
 
-### 🖧 1. **Servidor DNS (Bind9)**
-- Configurado com zona primária `asa.br`
-- Permite a resolução dos domínios locais (ex: `web1.asa.br`, `web2.asa.br`)
+### 🖧 1. Servidor DNS (Bind9)
+- Configurado com uma **zona primária** `asa.br`
+- Responsável pela **resolução de nomes locais**, como:
+  - `web1.asa.br`
+  - `web2.asa.br`
 
-### 🌐 2. **Proxy Reverso HTTP + HTTPS (NGINX)**
-- Redireciona requisições para os servidores `web1` e `web2`
-- Configurado com **certificados SSL autoassinados**
-- Acessível via HTTPS em `https://localhost`
+### 🌐 2. Proxy Reverso HTTP + HTTPS (NGINX)
+- Implementado com **NGINX**
+- Redireciona requisições para os servidores web conforme o domínio requisitado
+- Protegido com **certificados SSL autoassinados**
 
-### 🖥️ 3. **Servidores Web**
-- `WEB1`: Página personalizada em `index.html`
-- `WEB2`: Página diferenciada com identificação própria
+### 🖥️ 3. Servidores Web (WEB1 e WEB2)
+- **WEB1:** Página HTML personalizada identificando o serviço
+- **WEB2:** Página HTML diferente da WEB1 para fácil distinção
 
 ---
 
-## 🏗️ Componentes da Solução
+### ⚙️ Tecnologias e Conceitos Envolvidos
 
--Docker Engine
--Docker Compose
--Bind9 (DNS)
--NGINX (Proxy Reverso)
--SSL/TLS (certificados autoassinados)
--Redes Docker personalizadas
--HTML estático
+- **Docker Engine:** Motor principal de containers
+- **Docker Compose:** Orquestração de múltiplos containers
+- **Bind9:** Servidor DNS com zona configurável
+- **NGINX:** Proxy reverso com suporte a SSL
+- **SSL/TLS:** Certificados autoassinados para comunicação segura
+- **Redes Docker personalizadas:** Permite comunicação entre containers isoladamente
+- **HTML Estático:** Conteúdo servido pelas aplicações web
 
 ---
 
@@ -129,24 +92,13 @@ docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
 - Docker instalado → [Instalar Docker](https://docs.docker.com/get-docker/)
 - Docker Compose instalado → [Instalar Docker Compose](https://docs.docker.com/compose/install/)
 
-### Como rodar
+### ▶️ Como rodar
 
 ```bash
 git clone https://github.com/joao-victor212/ASA-Entrega-02.git
 cd ASA-Entrega-02
 docker compose up --build
-
----
-
-## 🗣️ Apresentação
-
-A apresentação aborda:
-- Conceitos teóricos do Docker
-- Explicação do cenário proposto
-- Demonstração prática com containers em execução
-- Vídeo explicativo da atividade
-
-📎 Arquivos disponíveis em `docs/`
+```
 
 ---
 
