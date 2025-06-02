@@ -94,6 +94,23 @@ ASA-Entrega-02/
 
 ### ▶️ Como rodar
 
+#### 🔧⚠️ Configuração do arquivo hosts para teste local
+Para que os nomes de domínio funcionem corretamente no seu PC local, você DEVE editar o arquivo hosts com permissão de administrador:
+- WINDOWS: 
+  Abra o terminal como adiministrador e execute o seguinte comando:
+```bash
+notepad C:\Windows\System32\drivers\etc\hosts
+```
+- Linux/macOS:
+  sudo nano /etc/hosts
+
+  - Adicone as seguintes linhas ao arquivo e salve.
+  ```bash
+  127.0.0.1    asa.br
+  127.0.0.1    web1.asa.br
+  127.0.0.1    web2.asa.br
+  ```
+
 ```bash
 git clone https://github.com/joao-victor212/ASA-Entrega-02.git
 cd ASA-Entrega-02
