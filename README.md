@@ -94,11 +94,40 @@ ASA-Entrega-02/
 
 ### ▶️ Como rodar
 
+#### 🔧⚠️ Configuração do arquivo hosts para teste local
+
+1. Para que os nomes de domínio funcionem corretamente no seu PC local, você DEVE editar o arquivo hosts com permissão de administrador:
+- WINDOWS:
+   
+  Abra o terminal como adiministrador e execute o seguinte comando:
+```bash
+notepad C:\Windows\System32\drivers\etc\hosts
+```
+- Linux/macOS:
+
+  Abra o terminal e execute o seguinte comando:
+```bash
+sudo nano /etc/hosts
+```
+2. Adicone as seguintes linhas ao arquivo **hosts** e salve.
+```bash
+127.0.0.1    asa.br
+127.0.0.1    web1.asa.br
+127.0.0.1    web2.asa.br
+```
+3. Agora basta executar os seguintes comandos:
 ```bash
 git clone https://github.com/joao-victor212/ASA-Entrega-02.git
 cd ASA-Entrega-02
 docker compose up --build
 ```
+#### 🌐 Acessando os Serviços
+
+| Serviço          | URL                   | Descrição                  |
+|------------------|-----------------------|----------------------------|
+| 🔄 Proxy Reverso | http://asa.br         | Ponto de entrada principal |
+| 🖥️ Servidor Web 1 | http://web1.asa.br    | Primeiro servidor web      |
+| 🖥️ Servidor Web 2 | http://web2.asa.br    | Segundo servidor web       |
 
 ---
 

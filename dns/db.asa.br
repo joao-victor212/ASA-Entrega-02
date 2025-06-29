@@ -8,6 +8,7 @@ $TTL	604800
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
+<<<<<<< HEAD
 ; Nameserver
 		IN	NS	ns
 ns		IN	A	192.168.1.65
@@ -18,3 +19,12 @@ portal  IN  CNAME   www
 web1    IN  CNAME   www
 web2    IN  CNAME   www
 www     IN  A       192.168.1.65
+=======
+;
+@		IN	NS	ns.asa.br.
+@		IN	A	127.0.0.1
+www		IN	A	127.0.0.1
+portal	IN	CNAME	www
+web1	IN 	CNAME   www
+web2	IN 	CNAME   www
+>>>>>>> 9701cde5fd9b5de4a7ce94d146e7d304763fdf6f
